@@ -70,7 +70,7 @@ void loop() {
     digitalWrite(motor2forward, HIGH);
     digitalWrite(motor1back, HIGH);
     digitalWrite(motor2back, LOW );
-    delay(150);
+    delay(random(200, 1000));
   }
 
   else if(distanceFront >=10 and distanceRight <=10){
@@ -84,7 +84,23 @@ void loop() {
     digitalWrite(motor2forward, LOW);
     digitalWrite(motor1back, LOW);
     digitalWrite(motor2back, HIGH);
-    delay(150);
+    delay(random(200, 1000));
+  }
+
+  else if (distanceRight >=10){
+    digitalWrite(motor1forward, LOW); // left turn
+    digitalWrite(motor2forward, HIGH);
+    digitalWrite(motor1back, HIGH);
+    digitalWrite(motor2back, LOW );
+    delay(random(200, 1000));
+  }
+
+  else if (distanceLeft >=10){
+    digitalWrite(motor1forward, HIGH); // right turn
+    digitalWrite(motor2forward, LOW);
+    digitalWrite(motor1back, LOW);
+    digitalWrite(motor2back, HIGH);
+    delay(random(200, 1000));
   }
 
   else if (distanceFront <= 10) {
